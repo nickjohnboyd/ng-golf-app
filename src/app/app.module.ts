@@ -10,6 +10,12 @@ import { ScorecardComponent } from './components/scorecard/scorecard.component';
 import { CourseComponent } from './components/course/course.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +27,11 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

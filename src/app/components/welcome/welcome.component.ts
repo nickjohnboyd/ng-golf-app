@@ -16,7 +16,7 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.coursesService.getCourses().subscribe(courses => {
-      this.courses = courses;
+      this.courses = courses.courses;
       console.log(this.courses);
     });
   }

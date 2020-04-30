@@ -1,1 +1,14 @@
-<p>welcome works!</p>
+<div class="welcome">
+	<mat-card class="welcome-card">
+		<div class="titles-cont">
+			<mat-card-title class="welcome-title">Welcome!</mat-card-title>
+			<mat-card-subtitle>Select your course to begin!</mat-card-subtitle>
+		</div>
+		<mat-card-content class="welcome-content">
+			<app-course *ngFor="let course of courses" [course]="course"></app-course>
+		</mat-card-content>
+		<mat-card-actions>
+			<button mat-raised-button class="build-btn">Build Scorecard</button>
+		</mat-card-actions>
+	</mat-card>
+</div>

@@ -1,1 +1,6 @@
-<p>course works!</p>
+<mat-card class="course">
+	<mat-card-title class="course-title">{{ course.name }}</mat-card-title>
+	<div class="course-img-cont">
+		<img class="course-img" [src]="course.image" [alt]="course.name">
+	</div>
+</mat-card>

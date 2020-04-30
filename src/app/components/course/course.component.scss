@@ -1,0 +1,20 @@
+.course {
+	margin-right: 25px;
+	background-color: #e6e6e6;
+
+	.course-title {
+		text-align: center;
+	}
+	.course-img-cont {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 200px;
+		width: 230px;
+
+		.course-img {
+			width: 230px;
+			border-radius: 5px;
+		}
+	}
+}
