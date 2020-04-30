@@ -1,6 +1,18 @@
-<mat-card class="course">
-	<mat-card-title class="course-title">{{ course.name }}</mat-card-title>
-	<div class="course-img-cont">
-		<img class="course-img" [src]="course.image" [alt]="course.name">
+<div class="course-cont">
+	<mat-card class="course" (click)="showOptions()">
+		<mat-card-title class="course-title">{{ course.name }}</mat-card-title>
+		<div class="course-img-cont">
+			<img class="course-img" [src]="course.image" [alt]="course.name">
+		</div>
+		<!-- <div [@enterLeave] *ngIf="isOpen" class="test">
+			<div>The box is now {{ isOpen ? 'open' : 'closed' }}</div>
+		</div> -->
+	</mat-card>
+	<div class="course-options" [@enterLeave] *ngIf="isOpen">
+	<!-- <div class="course-options" [@openClose]="isOpen ? 'open' : 'closed'"> -->
+		<div>Choose this</div>
+		<div>Choose this</div>
+		<div>Choose this</div>
+		<div>Choose this</div>
 	</div>
-</mat-card>
+</div>
