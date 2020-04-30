@@ -12,8 +12,8 @@ export class CoursesService {
     private http: HttpClient
   ) { }
 
-  getCourses(): Observable<any> {
-    return this.http.get<any>('https://golf-courses-api.herokuapp.com/courses');
+  getCourses(): Observable<Course[]> {
+    return this.http.get<Course[]>('https://golf-courses-api.herokuapp.com/courses');
   }
   
   getCourseById() {
