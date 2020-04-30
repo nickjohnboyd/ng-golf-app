@@ -4,16 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CourseComponent } from './course/course.component';
-import { HomeComponent } from './home/home.component';
-import { ScorecardComponent } from './scorecard/scorecard.component';
+import { ScorecardComponent } from './components/scorecard/scorecard.component';
+import { CourseComponent } from './components/course/course.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CourseComponent,
-    HomeComponent,
-    ScorecardComponent
+    ScorecardComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
