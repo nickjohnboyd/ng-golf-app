@@ -1,71 +1,44 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Course } from 'src/app/models/course';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition
-} from '@angular/animations';
+import { CoursesService } from 'src/app/shared/courses.service';
+import { Animations } from '../../animations';
 
 @Component({
   selector: 'app-course',
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.scss'],
   animations: [
-    trigger('enterLeave', [
-      transition(':enter', [
-        style({
-          height: 0,
-          opacity: 0
-        }),
-        animate('0.5s ease-out', style({
-          height: '*',
-          opacity: 1
-        }))
-      ]),
-      transition(':leave', [
-        style({
-          height: '*',
-          opacity: 1
-        }),
-        animate('0.5s ease-in', style({
-          height: 0,
-          opacity: 0
-        }))
-      ])
-    ]),
-    trigger('openClose', [
-      state('open', style({
-        height: '*',
-        opacity: 1,
-        backgroundColor: 'yellow'
-      })),
-      state('closed', style({
-        height: '*',
-        opacity: 0,
-        backgroundColor: 'green'
-      })),
-      transition('open => closed', [
-        animate('0.35s')
-      ]),
-      transition('closed => open', [
-        animate('0.35s')
-      ])
-    ])  
+    Animations.enterLeaveTrigger
   ]
 })
 export class CourseComponent implements OnInit {
   @Input() course: Course;
   isOpen = false;
+  fullCourse: Course;
+  teeTypes = [];
 
-  constructor() { }
+  constructor(
+    private coursesService: CoursesService
+  ) { }
 
   ngOnInit(): void {
   }
 
-  showOptions() {
+  showOptions(id: number) {
     this.isOpen = !this.isOpen;
+    this.coursesService.getCourseById(id).subscribe(course => {
+      this.fullCourse = course;
+      console.log(this.fullCourse);
+      this.setTeeTypes(this.fullCourse);
+    });
+  }
+
+  setTeeTypes(course) {
+    course.data.holes[0].teeBoxes.map(teeBox => {
+      if(teeBox.teeTypeId === 5) return;
+      this.teeTypes.push(teeBox.teeType.charAt(0).toUpperCase() + teeBox.teeType.slice(1));
+    });
+    console.log(this.teeTypes);
   }
 
 }

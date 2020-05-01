@@ -1,31 +1,24 @@
 <div class="course-cont">
-	<mat-card class="course" (click)="showOptions()">
+	<mat-card class="course" (click)="showOptions(course.id)">
 		<mat-card-title class="course-title">{{ course.name }}</mat-card-title>
 		<div class="course-img-cont">
 			<img class="course-img" [src]="course.image" [alt]="course.name">
 		</div>
-		<!-- <div [@enterLeave] *ngIf="isOpen" class="test">
-			<div>The box is now {{ isOpen ? 'open' : 'closed' }}</div>
-		</div> -->
 	</mat-card>
 	<div class="course-options" [@enterLeave] *ngIf="isOpen">
-	<!-- <div class="course-options" [@openClose]="isOpen ? 'open' : 'closed'"> -->
 		<mat-form-field class="options-form">
 			<mat-label>Tee Type</mat-label>
 			<mat-select>
-				<mat-option>Womens</mat-option>
-				<mat-option>Champion</mat-option>
-				<mat-option>Womens</mat-option>
-				<mat-option>Womens</mat-option>
+				<mat-option *ngFor="let teeType of teeTypes" [value]="teeType">{{ teeType }}</mat-option>
 			</mat-select>
 		</mat-form-field>
 		<mat-form-field class="options-form">
 			<mat-label>Amount of Players</mat-label>
 			<mat-select>
-				<mat-option>1</mat-option>
-				<mat-option>2</mat-option>
-				<mat-option>3</mat-option>
-				<mat-option>4</mat-option>
+				<mat-option [value]="1">1</mat-option>
+				<mat-option [value]="2">2</mat-option>
+				<mat-option [value]="3">3</mat-option>
+				<mat-option [value]="4">4</mat-option>
 			</mat-select>
 		</mat-form-field>
 	</div>
