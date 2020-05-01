@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Course } from 'src/app/models/course';
 import { CoursesService } from 'src/app/shared/courses.service';
 import { Animations } from '../../animations';
+import { Router } from '@angular/router';
+import { BuildOptionsService } from 'src/app/shared/build-options.service';
 
 @Component({
   selector: 'app-course',
@@ -13,12 +15,17 @@ import { Animations } from '../../animations';
 })
 export class CourseComponent implements OnInit {
   @Input() course: Course;
+  
   isOpen = false;
   fullCourse: Course;
   teeTypes = [];
 
+  teeType: string;
+  playersNum: number;
+
   constructor(
-    private coursesService: CoursesService
+    private coursesService: CoursesService,
+    private buildOptionsService: BuildOptionsService
   ) { }
 
   ngOnInit(): void {
@@ -41,4 +48,11 @@ export class CourseComponent implements OnInit {
     console.log(this.teeTypes);
   }
 
+  buildScorecard() {
+    this.buildOptionsService.setOptions(this.teeType, this.playersNum);
+    const teeType = this.buildOptionsService.getTeeType();
+    console.log(teeType);
+  }
+
+  
 }

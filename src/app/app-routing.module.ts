@@ -6,7 +6,7 @@ import { ScorecardComponent } from './components/scorecard/scorecard.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
-  { path: 'scorecard', component: ScorecardComponent },
+  { path: 'scorecard/:id', component: ScorecardComponent },
   { path: '**', redirectTo: '' }
 ];
 

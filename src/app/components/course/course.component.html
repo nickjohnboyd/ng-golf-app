@@ -8,13 +8,13 @@
 	<div class="course-options" [@enterLeave] *ngIf="isOpen">
 		<mat-form-field class="options-form">
 			<mat-label>Tee Type</mat-label>
-			<mat-select>
+			<mat-select [(ngModel)]="teeType">
 				<mat-option *ngFor="let teeType of teeTypes" [value]="teeType">{{ teeType }}</mat-option>
 			</mat-select>
 		</mat-form-field>
 		<mat-form-field class="options-form">
 			<mat-label>Amount of Players</mat-label>
-			<mat-select>
+			<mat-select [(ngModel)]="playersNum">
 				<mat-option [value]="1">1</mat-option>
 				<mat-option [value]="2">2</mat-option>
 				<mat-option [value]="3">3</mat-option>
@@ -22,6 +22,6 @@
 				<mat-option [value]="5">5</mat-option>
 			</mat-select>
 		</mat-form-field>
-		<button mat-raised-button class="build-btn">Build Scorecard</button>
+		<button mat-raised-button class="build-btn" [routerLink]="['/scorecard', course.id]" (click)="buildScorecard()">Build Scorecard</button>
 	</div>
 </div>
