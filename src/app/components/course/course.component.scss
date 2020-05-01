@@ -31,7 +31,17 @@
 		transform: scale(1.015);
 	}
 	.course-options {
-		height: 100px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		// height: 100px;
+
+		.options-form {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 	}
 	
 	// .test {

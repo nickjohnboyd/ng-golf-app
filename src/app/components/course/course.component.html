@@ -10,9 +10,23 @@
 	</mat-card>
 	<div class="course-options" [@enterLeave] *ngIf="isOpen">
 	<!-- <div class="course-options" [@openClose]="isOpen ? 'open' : 'closed'"> -->
-		<div>Choose this</div>
-		<div>Choose this</div>
-		<div>Choose this</div>
-		<div>Choose this</div>
+		<mat-form-field class="options-form">
+			<mat-label>Tee Type</mat-label>
+			<mat-select>
+				<mat-option>Womens</mat-option>
+				<mat-option>Champion</mat-option>
+				<mat-option>Womens</mat-option>
+				<mat-option>Womens</mat-option>
+			</mat-select>
+		</mat-form-field>
+		<mat-form-field class="options-form">
+			<mat-label>Amount of Players</mat-label>
+			<mat-select>
+				<mat-option>1</mat-option>
+				<mat-option>2</mat-option>
+				<mat-option>3</mat-option>
+				<mat-option>4</mat-option>
+			</mat-select>
+		</mat-form-field>
 	</div>
 </div>
