@@ -22,17 +22,14 @@
 			flex-direction: column;
 			width: 80%;
 			background-color: #84c011;
-			padding-top: 16px;
+			padding: 25px 0 13px 0;
 			border-radius: 5px;
 		}
 		.welcome-content {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin: 40px 0 50px 0;
-		}
-		.build-btn {
-			background-color: #84c011;
+			margin: 50px 0 70px 0;
 		}
 	}
 }

@@ -4,9 +4,9 @@
 	justify-content: center;
 	align-items: center;
 	height: 350px;
+	margin-right: 30px;
 
 	.course {
-		margin: 0 25px 20px 0;
 		background-color: #e6e6e6;
 	
 		.course-title {
@@ -35,12 +35,17 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		height: 100px;
+		height: 140px;
+		margin-top: 20px;
 
 		.options-form {
 			display: flex;
 			justify-content: center;
 			align-items: center;
+		}
+		.build-btn {
+			background-color: #84c011;
+			margin-top: 7px;
 		}
 	}
 }
